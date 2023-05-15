@@ -923,7 +923,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
                 }
             }
             $("#unit_input_catapult").val(cataInfo.catapult);
-            setTimeout(() => { }, 2000);
+            sleep(2000)
             $('#target_attack').click();
             $('#target_attack').prop('disabled', true);
         } else {
@@ -984,7 +984,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
             storage.setItem(LOCALSTORAGE_NS + "_target", JSON.stringify(buildings));
             isAlreadyStared = true;
         }
-        setTimeout(() => { }, 2000);
+        sleep(2000)
         $("#troop_confirm_submit").click();
         $('#troop_confirm_submit').prop('disabled', true);
     }
@@ -1057,3 +1057,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
 
     run();
 }());
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
