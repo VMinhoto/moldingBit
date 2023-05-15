@@ -738,7 +738,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
             $("#unit_input_" + unitName).val(used);
         }
         if (strength > 0) {
-            throw new UserError("Pas assez de troupes pour l'accompagnement, il manque " + Math.ceil(strength / UNIT_ATTACK_STRENGTH.axe) + " haches ou equivalent");
+            throw new UserError("Not enough troops, it lacks " + Math.ceil(strength / UNIT_ATTACK_STRENGTH.axe) + " axes or equivalent");
         }
     }
 
@@ -761,7 +761,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
         var links = getReportLinks();
         if (links.length === 0) {
             storage.removeItem(KEY);
-            throw new UserError("Plus aucun rapport Ã  traiter");
+            throw new UserError("No more reports to process");
         }
         var first = links.shift();
         storage.setItem(KEY, JSON.stringify(links)); // removed first
@@ -893,7 +893,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
                     UI.InfoMessage("Destroying the wall with rams");
                     $("#unit_input_ram").val(ramNeeded);
                     //$("#unit_input_catapult").val("1");  needed for workaround (sendCata() assumes we have catapults)
-                    return;
+                    
                 }
             }
 
@@ -923,6 +923,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
                 }
             }
             $("#unit_input_catapult").val(cataInfo.catapult);
+            sleep(2000);
             $('#target_attack').click();
             $('#target_attack').prop('disabled', true);
         } else {
@@ -983,6 +984,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
             storage.setItem(LOCALSTORAGE_NS + "_target", JSON.stringify(buildings));
             isAlreadyStared = true;
         }
+        sleep(2000);
         $("#troop_confirm_submit").click();
         $('#troop_confirm_submit').prop('disabled', true);
     }
