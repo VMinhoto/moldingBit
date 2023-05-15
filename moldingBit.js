@@ -923,8 +923,8 @@ $.each(UnitPopup.unit_data, function(a,b) {
                 }
             }
             $("#unit_input_catapult").val(cataInfo.catapult);
-            setTimeout(() => { $('#target_attack').click(); }, 2000);
-            $('#target_attack').prop('disabled', true);
+            window.setTimeout(() => { $('#target_attack').click(); }, 2000);
+            //$('#target_attack').prop('disabled', true);
         } else {
             /*  Assashina Have to be removed to conform to the new rules*/
       
@@ -983,8 +983,8 @@ $.each(UnitPopup.unit_data, function(a,b) {
             storage.setItem(LOCALSTORAGE_NS + "_target", JSON.stringify(buildings));
             isAlreadyStared = true;
         }
-        setTimeout(() => { $('#troop_confirm_submit').click(); }, 2000);
-        $('#troop_confirm_submit').prop('disabled', true);
+        window.setTimeout(() => { $('#troop_confirm_submit').click(); }, 2000);
+        //$('#troop_confirm_submit').prop('disabled', true);
     }
 
     function farmSaveReportLinks() {
