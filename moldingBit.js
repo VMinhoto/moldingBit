@@ -923,10 +923,11 @@ $.each(UnitPopup.unit_data, function(a,b) {
                 }
             }
             $("#unit_input_catapult").val(cataInfo.catapult);
+            $('#target_attack').click();
+            $('#target_attack').prop('disabled', true);
         } else {
             /*  Assashina Have to be removed to conform to the new rules*/
-      $('#target_attack').click();
-      $('#target_attack').prop('disabled', true);
+      
 	  
         }
     }
@@ -955,8 +956,8 @@ $.each(UnitPopup.unit_data, function(a,b) {
             }
             storage.setItem(LOCALSTORAGE_NS + "_target", JSON.stringify(buildings)); // actualise batiments  
             /*  Assashina : Have to be removed to conform to the new rules*/
-      $("#troop_confirm_go").click();
-      $('#troop_confirm_go').prop('disabled', true);
+      $("#troop_confirm_submit").click();
+      $('#troop_confirm_submit').prop('disabled', true);
 	   
             window.catapultSent = true;
 
