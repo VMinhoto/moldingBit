@@ -864,6 +864,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
                         callback: openReportLink,
                         confirm: true
                     }]);*/
+                    openReportLink()
                     window.fillCataDisable = true;
                 }
                 return;
