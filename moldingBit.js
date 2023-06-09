@@ -858,11 +858,12 @@ $.each(UnitPopup.unit_data, function(a,b) {
                 if (getReportLinks().length === 0) {
                     UI.ErrorMessage("There is no report for this target.<br>Maybe it was just deleted because everything was destroyed?");
                 } else {
+                    /*
                     UI.ConfirmationBox('Do you want to go to the next report?', [{
                         text: 'Sim',
                         callback: openReportLink,
                         confirm: true
-                    }]);
+                    }]);*/
                     window.fillCataDisable = true;
                 }
                 return;
